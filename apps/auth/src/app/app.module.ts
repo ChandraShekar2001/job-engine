@@ -5,13 +5,17 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { LoggerModule } from '@job-engine/nestjs';
+import { GqlLoggingPlugin } from '@job-engine/graphql';
 
 @Module({
   imports: [
+    LoggerModule,
     PrismaModule,
-    ConfigModule,
+    ConfigModule.forRoot({ isGlobal: true }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
+      plugins: [new GqlLoggingPlugin()],
       playground: {
         settings: {
           'request.credentials': 'include',

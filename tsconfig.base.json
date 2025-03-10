@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@job-engine/graphql": ["libs/graphql/src/index.ts"],
+      "@job-engine/grpc": ["libs/grpc/src/index.ts"],
       "@job-engine/nestjs": ["libs/nestjs/src/index.ts"],
+      "@job-engine/prisma": ["libs/prisma/src/index.ts"],
       "@job-engine/pulsar": ["libs/pulsar/src/index.ts"]
     }
   },

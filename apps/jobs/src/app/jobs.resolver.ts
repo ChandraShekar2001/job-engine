@@ -3,7 +3,7 @@ import { Job } from './models/job.model';
 import { JobsService } from './jobs.service';
 import { ExecuteJobInput } from './dto/execute-job.input';
 import { UseGuards } from '@nestjs/common';
-import { GqlAuthGuard } from '@job-engine/nestjs';
+import { GqlAuthGuard } from '@job-engine/graphql';
 
 @Resolver()
 export class JobsResolver {
